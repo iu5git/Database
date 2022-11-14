@@ -1,6 +1,10 @@
 # Database
 Курс ИУ5 по Базам Данных. PostgreSQL
 
+#### Образ виртуальной машины Linux [Ubuntu 20.04](https://github.com/iu5git/Standards/blob/main/Linux/Linux.md) для выполнения заданий курса
+
+### Общее
+
 - Программное обеспечение. Студенты могут использовать виртуалку с Linux или компьютеры в аудитории
 
 - IDE. PgAdmin, но предпочтительнее DataGrip. DataGrip Community?
