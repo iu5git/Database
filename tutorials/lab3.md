@@ -10,41 +10,41 @@
 `id_pos = position_ref`
 Итоговый запрос будет выглядеть следующим образом:
 
-`SELECT id_person, name, id_pos, title 
-FROM `persons` 
-INNER JOIN `positions` ON id_pos = position_ref`
+`SELECT id_person, name, id_pos, title `
+`FROM `persons`` 
+`INNER JOIN `positions` ON id_pos = position_ref``
 
 Наиболее внимательные могли заметить приписку INNER перед JOIN. Здесь стоит разобрать все виды объединений. 
 Всего их 3: INNER (Такое присоединение покажет нам данные из таблиц, только если условие связывания соблюдается), LEFT/RIGHT (здесь мы увидим все записи из левой/правой таблицы в то время, как поля из правой/левой будут добавлены по возможности)
 LEFT и RIGHT JOIN отличаются лишь тем, какая из таблиц будет выведена полностью, так что нет смысла разибрать оба варианта. Ниже представлен пример работы LEFT JOIN.
 
 `
-SELECT id_person, name, id_pos, title 
-FROM `persons` 
-LEFT OUTER JOIN `positions` ON id_pos = position_ref`
+SELECT id_person, name, id_pos, title `
+`FROM `persons`` 
+`LEFT OUTER JOIN `positions` ON id_pos = position_ref``
 ![Иллюстрация](https://github.com/iu5git/Database/tree/main/pictures/м2.png)
 
 «Левая» таблица persons, содержит строку id_person#3 — «Александр», где указан идентификатор должности, отсутствующей в словаре. Мы увидим все записи из «левой» таблицы, тогда как правая будет присоединена по возможности.
 ## **Group by**
 Для группировки данных в PostgreSQL применяются операторы GROUP BY и HAVING, для использования которых применяется следующий формальный синтаксис:
-`SELECT столбцы
-FROM таблица
-[WHERE условие_фильтрации_строк]
-[GROUP BY столбцы_для_группировки]
-[HAVING условие_фильтрации_групп]
-[ORDER BY столбцы_для_сортировки]`
+`SELECT столбцы`
+`FROM таблица`
+`[WHERE условие_фильтрации_строк]`
+`[GROUP BY столбцы_для_группировки]`
+`[HAVING условие_фильтрации_групп]`
+`[ORDER BY столбцы_для_сортировки]``
 
 Для рассмотрения того, как работают данные операторы возьмем уже другую таблицу:
 
-CREATE TABLE Products
-(
-    Id SERIAL PRIMARY KEY,
-    ProductName VARCHAR(30) NOT NULL,
-    Company VARCHAR(20) NOT NULL,
-    ProductCount INT DEFAULT 0,
-    Price NUMERIC NOT NULL,
-    IsDiscounted BOOL
-);
+`CREATE TABLE Products`
+`(`
+  `  Id SERIAL PRIMARY KEY,`
+  `  ProductName VARCHAR(30) NOT NULL,`
+   ` Company VARCHAR(20) NOT NULL,`
+ `   ProductCount INT DEFAULT 0,`
+ `   Price NUMERIC NOT NULL,`
+ `   IsDiscounted BOOL`
+`);`
 
 Главное предназначение данных операторов заключается в том, чтобы анализировать группы строк, полученнные в результате отбора. Это применяется, когда мы хотим получить количество товаров определнного типа или посчитать их общий вес.
 
