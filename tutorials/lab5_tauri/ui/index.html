@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+</head>
+
+<body>
+    <script type="module" src="./scripts/main.js"></script>
+    <form id="loginForm">
+        <label>Login</label>
+        <input type="text" id="login" placeholder="login">
+        <label>Password</label>
+        <input type="password" id="password" placeholder="password">
+        <br />
+        <input type="button" id="register" value="Register" />
+        <input type="button" id="signin" value="Sign in" />
+    </form>
+    <div id="status" hidden=true>Invalid credentials.</div>
+    <input type="button" id="signout" value="Sign out" hidden=true />
+    <br />
+    <br />
+    <div id="taskDiv" hidden=true>
+        <form style="display: table-caption;">
+            New task<br />
+            <label>Description</label>
+            <input type="text" id="taskDescription" placeholder="description">
+            <label>Due time</label>
+            <input type="datetime-local" id="taskDueTime" placeholder="due time">
+            <input type="button" id="newTask" value="Create" />
+        </form>
+    </div>
+    <br />
+    <div id="tasksDisplay" hidden=true>
+        Your tasks list:
+        <br />
+        <div style="display: table-caption;" id="tasksList" hidden=true></div>
+    </div>
+</body>
+
+</html>
