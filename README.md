@@ -22,7 +22,7 @@
 
 Создать БД. Create (типы данных, Primary, Foreign), пара таблиц. Select, CRUD. NULL, NOT NULL
 
-[Методические указания](tutorials/lab1.md)
+[Методические указания](tutorials/lab1)
 
 ### Лабораторная 2. Запросы DDL и DCL
 
