@@ -32,6 +32,8 @@ DDL (alter table) + DCL (Пользователи? grant, revoke).
 
 Загрузка данных из csv. Полная версия бекапа и части данных.
 
+[Методические указания](tutorials/lab2)
+
 ### Лабораторная 3. Подробно SELECT
 
 Select, where, join, order by. LEFT JOIN. Агрегированные функции, group by, having. Exists, union. 
