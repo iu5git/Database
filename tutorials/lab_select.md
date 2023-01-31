@@ -110,37 +110,13 @@ GROUP BY GROUPING SETS(Company, ProductCount);`
 
 ССЫЛКА НА ОФИЦИАЛЬНУЮ ДОКУМЕНТАЦИЮ https://www.postgresql.org/docs/
 # **Задание**
-1. Применить 3 различных JOIN
-1. Сгруппировать данные из таблицы и посчитать кол-во записей (в зависимости от таблицы в бд)
-1. Применить GROUPING SETS, CUBE и ROLLUP
-1. Вывести группы, с дополнительным параметром HAVING
-Номер варианта	Тип Join'a	Способ Группировки	Агрегирующая функция
-1	LEFT	Group By	SUM
-2	LEFT	Group By	MAX
-3	LEFT	Group By	AVG
-4	LEFT	Group By	COUNT
-5	LEFT	HAVING	SUM
-6	LEFT	HAVING	MAX
-7	LEFT	HAVING	AVG
-8	LEFT	HAVING	COUNT
-9	RIGHT	Group By	SUM
-10	RIGHT	Group By	MAX
-11	RIGHT	Group By	AVG
-12	RIGHT	Group By	COUNT
-13	RIGHT	HAVING	SUM
-14	RIGHT	HAVING	MAX
-15	RIGHT	HAVING	AVG
-16	RIGHT	HAVING	COUNT
-17	INNER	Group By	SUM
-18	INNER	Group By	MAX
-19	INNER	Group By	AVG
-20	INNER	Group By	COUNT
-21	INNER	HAVING	SUM
-22	INNER	HAVING	MAX
-23	INNER	HAVING	MIN
-24	INNER	HAVING	COUNT
-25	INNER	HAVING	AVG
+1.Обязательное задание по вариантам.
+Необходимо создать 2 таблицы в каждой из которых будет не менее 4 столбцов и не менее 12 записей (нужно чтобы было хотя бы 2 дубликата). После этого по варианту из таблицы применить join с использование агрегирующей функции и сгруппировать. Кроме того необходимо продемонстрировать умение работать с LIMIT и DISTINCT.
 ![image](https://user-images.githubusercontent.com/27778129/215747708-a265e0ef-f2e1-4fd6-a316-85b13faa4a00.png)
+2. Задание на +1 балл:
+Изменить таблицы из пункта 1 так, чтобы были текстовые поля, а также значения NULL. Добавить добавить дополнительную фильтрацию на основе текстовых полей. Добавить запрос, который заменить все путсые(NULL) значения на произвольные (выбранные студентом или преподавателем).
+3. Задание на еще 1 дополнительный балл:
+К результату из пункта 2 присоединить еще одну таблицу на основе любого поля, а также отсортировать вывод с помощью ORDER BY.
 
 # **Контрольные вопросы**
 1. Что такое join и для чего они нужны? 
