@@ -55,9 +55,11 @@ CREATE TABLE Products`
 Важно понимать, что группировать можно по нескольким столбцам одновременно. Однако, если в столбцах будут содержаться NULL значения, то такие записи будут заноситься в отдельную группу.
 Кроме того PostgreSQL позволяет использовать 3 дополнительных параметра вместе с Group by. Чтобы их применить необходимо между Group by и столбцами группировки добавить сам параметр, например вот так GROUP BY ROLLUP(Company);
 1) ROLLUP. Оператор ROLLUP добавляет суммирующую строку в результирующий набор.
+![Пример](https://github.com/iu5git/Database/tree/main/pictures/rollup.png)
+Как видно из примера, оператор ROLL UP создал суммирующую строку в которой указал общее число моделей и телефонов соответственно 
 2) CUBE похож на ROLLUP за тем исключением, что CUBE добавляет суммирующие строки для каждой комбинации групп.
+![Пример](https://github.com/iu5git/Database/tree/main/pictures/cube.png)
 3) Оператор GROUPING SETS группирует получемые наборы отдельно:
-4) 
 `SELECT Company, COUNT(*) AS Models, ProductCount
 FROM Products
 GROUP BY GROUPING SETS(Company, ProductCount);`
