@@ -128,6 +128,41 @@ GROUP BY GROUPING SETS(Company, ProductCount);
 Подробнее можно прочитать в официальной документации!
 
 ССЫЛКА НА ОФИЦИАЛЬНУЮ ДОКУМЕНТАЦИЮ https://www.postgresql.org/docs/
+
+## **Join трех таблиц**
+Join 2 таблиц ничем не отличается от join'a большего числа таблиц. Для наглядности возьмем следующую структуру бд, на основе которой и пропишем наш join.
+```
+ categories|   goods      |  orders
+ --------- |--------------|-------------
+ id(Pk)    |  id(Pk)      |  id(Pk)
+ title     |  name        |  items_id
+ ----      |  category_id |  ---
+```
+
+Сам запрос будет выглядеть вот так:
+
+```
+SELECT categories.title, goods.name, goods.id  *Здесь мы выбираем поля из уже объединенной таблицы, которые хотим вывести
+FROM (categories
+INNER JOIN goods
+ON categories.id = goods.category)  *Здесь мы сначала соединяем таблицы категории и товары, а следующим шагом соединим таблицу из этих двух с таблицей заказов
+INNER JOIN orders
+ON orders.items_id = goods.id
+ORDER BY categories.id;    *Собственно присоединяем еще одну таблицу
+```
+
+Таким образом объединение нескольких таблиц происходит последовательно. Также при необходимости мы можем добавлять условия WHERE и т.п. Пример:
+
+```
+SELECT categories.title, goods.name, goods.id  
+FROM (categories
+INNER JOIN goods
+ON categories.id = goods.category WHERE _условие_)  
+INNER JOIN orders
+ON orders.items_id = goods.id WHERE _условие_
+ORDER BY categories.id; 
+```
+
 # **Задание**
 1.Обязательное задание по вариантам.
 Необходимо создать 2 таблицы в каждой из которых будет не менее 4 столбцов и не менее 12 записей (нужно чтобы было хотя бы 2 дубликата). После этого по варианту из таблицы применить join с использование агрегирующей функции и сгруппировать. Кроме того, необходимо продемонстрировать умение работать с LIMIT и DISTINCT.
