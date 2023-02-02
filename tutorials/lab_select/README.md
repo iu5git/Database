@@ -18,9 +18,11 @@
 ```id_pos = position_ref```
 Итоговый запрос будет выглядеть следующим образом:
 
-```SELECT id_person, name, id_pos, title 
+```
+SELECT id_person, name, id_pos, title 
 FROM `persons`
-INNER JOIN `positions` ON id_pos = position_ref```
+INNER JOIN `positions` ON id_pos = position_ref
+```
 
 Наиболее внимательные могли заметить приписку INNER перед JOIN. Здесь стоит разобрать все виды объединений. 
 Всего их 3: INNER (Такое присоединение покажет нам данные из таблиц, только если условие связывания соблюдается), LEFT/RIGHT (здесь мы увидим все записи из левой/правой таблицы в то время, как поля из правой/левой будут добавлены по возможности)
