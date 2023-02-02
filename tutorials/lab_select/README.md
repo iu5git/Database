@@ -136,7 +136,7 @@ Join 2 таблиц ничем не отличается от join'a больш�
  --------- |--------------|-------------
  id(Pk)    |  id(Pk)      |  id(Pk)
  title     |  name        |  items_id
- ----      |  category_id |  ---
+ ----      |  category_id |  num_items
 ```
 
 Сам запрос будет выглядеть вот так:
@@ -159,7 +159,7 @@ FROM (categories
 INNER JOIN goods
 ON categories.id = goods.category WHERE _условие_)  
 INNER JOIN orders
-ON orders.items_id = goods.id WHERE _условие_
+ON orders.items_id = goods.id WHERE _условие_  GROUP BY num_items 
 ORDER BY categories.id; 
 ```
 
