@@ -11,3 +11,17 @@
    ```
 
 Подробнее можно причитать [здесь](https://habr.com/ru/post/578744/).
+
+
+## Дополнительный вариант развертывания PostgreSQL в Docker контейнер
+
+1. Скачиваем образ из Docker Hub
+```console
+docker pull postgres
+```
+2. Запускаем контейнер с СУБД
+```console
+docker run --name postgres -p 5455:5432 -e POSTGRES_USER=postgres -e POSTGRES_PASSWORD=postgres1234 -e POSTGRES_DB=test_db -d postgres
+```
+
+
