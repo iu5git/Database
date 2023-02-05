@@ -1,7 +1,7 @@
 version: "3.9"
 services:
   postgres:
-    image: postgres:15.0-alpine
+    image: postgres:15.0
     command:
       - "postgres"
       - "-c"
