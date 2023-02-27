@@ -19,7 +19,7 @@
 и т.д.
 
 ## Список датасетов
-1. [Kinopoisk-TOP250]('https://www.kaggle.com/datasets/alexandertesemnikov/kinopoisktop250russiandataset')
+1. [Kinopoisk-TOP250](https://www.kaggle.com/datasets/alexandertesemnikov/kinopoisktop250russiandataset)
 2. [IMDB Movies Dataset](https://www.kaggle.com/datasets/harshitshankhdhar/imdb-dataset-of-top-1000-movies-and-tv-shows)
 3. [Netflix Movies and TV Shows](https://www.kaggle.com/datasets/shivamb/netflix-shows)
 
