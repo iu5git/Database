@@ -113,7 +113,7 @@ psql имя_новой_базы < имя_файла_бэкапа.sql имя_по
 
 Альтернативной стратегией резервного копирования является непосредственное [копирование файлов](https://postgrespro.ru/docs/postgresql/9.6/backup-file), в которых PostgreSQL хранит содержимое базы данных. 
 
-*Прим.* В ОС Linux файлы обычно размещаются в */usr/local/pgsql/data* или в */var/lib/postgresql/data*.
+*Прим.* В ОС Linux файлы обычно размещаются в */usr/local/pgsql/data* или в */var/lib/postgresql/12/main/*.
 
 Процедура копирования:
 1. Остановка службы postgresql.
@@ -123,7 +123,7 @@ service postgresql stop
 
 2. Создание резеревной копии файлов.
 ```console
-tar -cf backup.tar /var/lib/postgresql/data
+tar -cf backup.tar /var/lib/postgresql/12/main
 ```
 
 3. Запуск службы postgresql.
@@ -140,12 +140,13 @@ service postgresql stop
 
 2. Удаление данных в каталоге кластера.
 ```console
-rm -rf /var/lib/postgresql/data/*
+rm -rf /var/lib/postgresql/12/main/*
 ```
 
 3. Воостановление резервной копии файловой системы.
 ```console
-tar -xf root/backup.tar
+tar -xf root/backup.tar  
+sudo chown -R /var/lib/postgresql/12/main/
 ```
 
 4. Запуск службы postgresql.
